@@ -12,8 +12,8 @@ const Item = props => {
     };
 
     return(
-        <div className={itemClassName} onClick={handleClick}>
-            <p>{props.item.task}</p>
+        <div onClick={handleClick}>
+            <p className={itemClassName}>{props.item.task} </p>
         </div>
     )
 
