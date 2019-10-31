@@ -26,15 +26,19 @@ class TodoForm extends Component {
 
     render() {
         return(
-            <form onSubmit={this.handleSubmit}>
-                <input
-                    onChange={this.handleChanges}
-                    type='text'
-                    name='item'
-                    value={this.state.task}
-                />
-                <button>Add to List</button>
-            </form>
+            <div className='form'>
+                <form onSubmit={this.handleSubmit}>
+                    <input
+                        onChange={this.handleChanges}
+                        type='text'
+                        name='item'
+                        value={this.state.task}
+                        className='field'
+                    />
+                    <button className='field'>Add to List</button>
+                </form>
+                <p className='directions'>Click on the task to check as completed</p>
+            </div>
         )
     }
 }

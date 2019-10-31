@@ -59,13 +59,16 @@ class App extends React.Component {
     console.log(this.state.todo)
     return (
       <div className='App'>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoForm addItem={this.addItem}/>
+        <h1>Welcome to your Todo App!</h1>
+        <TodoForm addItem={this.addItem}/> 
         <TodoList
         todo={this.state.todo}
         toggleCompleted={this.toggleCompleted}
         clearCompleted={this.clearCompleted}
-        />
+        />       
+        <button className='clearButton' onClick={this.clearCompleted}>
+          Clear Completed Task
+        </button>
       </div>
     );
   }
