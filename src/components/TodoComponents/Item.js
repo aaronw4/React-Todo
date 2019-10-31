@@ -7,8 +7,12 @@ const Item = props => {
         itemClassName = itemClassName + ' completed';
     }
 
+    const handleClick = () => {
+        props.toggleCompleted(props.item.id);
+    };
+
     return(
-        <div className={itemClassName}>
+        <div className={itemClassName} onClick={handleClick}>
             <p>{props.item.task}</p>
         </div>
     )

@@ -40,6 +40,20 @@ class App extends React.Component {
     })
   }
 
+  toggleCompleted = (itemID) => {
+    this.setState({
+      todo: this.state.todo.map(item => {
+        if (item.id === itemID) {
+          return {
+            ...item,
+            completed: !item.completed
+          }
+        }
+        return item;
+      })
+    })
+  }
+
   render() {
     return (
       <div className='App'>
@@ -47,10 +61,9 @@ class App extends React.Component {
         <TodoForm addItem={this.addItem}/>
         <TodoList
         todo={this.state.todo}
+        toggleCompleted={this.toggleCompleted}
+        clearCompleted={this.clearCompleted}
         />
-        <button className='clearButton' onClick={this.clearCompleted}>
-          Clear Completed Task
-        </button>
       </div>
     );
   }
