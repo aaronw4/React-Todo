@@ -1,4 +1,12 @@
-import React from 'react';
+import React, {Component} from 'react';
+
+const data = [
+  {
+    task: 'Make a to do list',
+    id: 1234,
+    completed: false
+  }
+]
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
