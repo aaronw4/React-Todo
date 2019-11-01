@@ -80,7 +80,6 @@ class App extends React.Component {
 }
 
   handleSearchSubmit = e => {
-    console.log(this.state.searchText);
     e.preventDefault();
     if (this.state.searchText !== '') {
       this.setState({
@@ -97,13 +96,9 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.todo)
-    console.log(this.state.lastTodo)    
-    console.log(this.state.searchText)
     return (
       <div className='App'>
-        <h1>Welcome to your Todo App!</h1>
-        <div className='form'>
+        <div className='search'>
           <form onSubmit={this.handleSearchSubmit}>
               <input
                 onChange={this.handleChanges}
@@ -111,22 +106,28 @@ class App extends React.Component {
                 name='search'
                 value={this.state.searchText}
                 className='field'
-                placeholder=''
+                placeholder='Search'
               />
-              <button >Search List</button>              
-          </form>
-          <form onSubmit={this.handleRestoreSubmit}>
-            <button>Restore List</button>
+              <button className='field'>Search List</button>              
           </form>
         </div>
+
+        <h1 className='title'>Welcome to your Todo App!</h1>        
+
         <TodoForm addItem={this.addItem}/> 
+
         <TodoList
         todo={this.state.todo}
         toggleCompleted={this.toggleCompleted}
         clearCompleted={this.clearCompleted}
-        />       
+        />   
+
         <button className='clearButton' onClick={this.clearCompleted}>
           Clear Completed Task
+        </button>    
+
+        <button className='clearButton' onClick={this.handleRestoreSubmit}>
+          Restore List
         </button>
       </div>
     );

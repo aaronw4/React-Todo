@@ -34,6 +34,7 @@ class TodoForm extends Component {
                         name='item'
                         value={this.state.task}
                         className='field'
+                        placeholder='Task'
                     />
                     <button className='field'>Add to List</button>
                 </form>

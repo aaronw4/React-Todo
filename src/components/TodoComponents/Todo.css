@@ -18,12 +18,13 @@ body {
     color: #f39422;
 }
 
-.App h1 {
-    padding: 25px 0 50px 0;
+.title {
+    padding: 100px 0 20px 0;
 }
 
 .clearButton {
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-left: 10px;
 }
 
 .form {
@@ -46,4 +47,10 @@ body {
     width: 75%;
     margin-right: auto;
     margin-left: auto;
+}
+
+.search {
+    float: right;
+    margin-right: 50px;
+    margin-top: 20px;
 }
