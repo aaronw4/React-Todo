@@ -87,6 +87,7 @@ class App extends React.Component {
           return item.task.includes(this.state.searchText)
         })
       })
+      this.setState({searchText: ''});
     }
   }
 
